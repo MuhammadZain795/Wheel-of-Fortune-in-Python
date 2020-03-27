@@ -29,30 +29,30 @@ color24 = ['#B0C4DE','#FF8C00','#000000','#888800','#008800','#008888','#C0C0C0'
 colors = [color1, color2, color3, color4, color5, color6, color7, color8, color9, color10, color11, color12, color13, color14, color15, color16, color17, color18, color19, color20, color21, color22, color23, color24]
 
 
-result1 = ['$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50']
-result2 = ['$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50', '$100']
-result3 = ['$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50', '$100', '$1000']
-result4 = ['$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500']
-result5 = ['BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200']
-result6 = ['$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT']
-result7 = ['$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400']
-result8 = ['$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1']
-result9 = ['Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000']
-result10 = ['$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play']
-result11 = ['$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100']
-result12 = ['$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400']
-result13 = ['$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200']
-result14 = ['$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1']
-result15 = ['Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500']
-result16 = ['$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn']
-result17 = ['$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100']
-result18 = ['$10', '$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000']
-result19 = ['$200', '$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10']
-result20 = ['$600', '$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200']
-result21 = ['$650', 'BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600']
-result22 = ['BANKRUPT', '$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650']
-result23 = ['$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT']
-result24 = ['$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250']
+result1 = ['100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50']
+result2 = ['1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50', '100']
+result3 = ['500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50', '100', '1000']
+result4 = ['200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500']
+result5 = ['BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200']
+result6 = ['400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT']
+result7 = ['1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400']
+result8 = ['5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1']
+result9 = ['Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000']
+result10 = ['100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play']
+result11 = ['400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100']
+result12 = ['200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400']
+result13 = ['1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200']
+result14 = ['500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1']
+result15 = ['Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500']
+result16 = ['100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn']
+result17 = ['1000', '10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100']
+result18 = ['10', '200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000']
+result19 = ['200', '600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10']
+result20 = ['600', '650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200']
+result21 = ['650', 'BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600']
+result22 = ['BANKRUPT', '250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650']
+result23 = ['250', '50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT']
+result24 = ['50','100', '1000', '500', '200', 'BANKRUPT', '400', '1', '5000', 'Free Play', '100', '400', '200', '1', '500', 'Lose turn', '100', '1000', '10', '200', '600', '650', 'BANKRUPT', '250']
 results = [result1, result2, result3, result4, result5, result6, result7, result8, result9, result10, result11, result12, result13, result14, result15, result16, result17, result18, result19, result20, result21, result22, result23, result24]
 circle = Turtle()
 ran = random.choice([5, 6, 7, 8, 9])
@@ -74,30 +74,30 @@ def wheel(colors, radius, center=(0, 0)):
         circle.penup()
         circle.goto(center)
         circle.end_fill()
-    write('white', results[ran][19], toWrite[0], center=(25, 50))
-    write('white', results[ran][20], toWrite[1], center=(25, 50))
-    write('white', results[ran][21], toWrite[2], center=(25, 50))
-    write('white', results[ran][22], toWrite[3], center=(25, 500))
-    write('white', results[ran][23], toWrite[4], center=(25, 50))
-    write('white', results[ran][0], toWrite[5], center=(25, 50))
-    write('white', results[ran][1], toWrite[6], center=(25, 50))
-    write('white', results[ran][2], toWrite[7], center=(25, 50))
-    write('white', results[ran][3], toWrite[8], center=(25, 50))
-    write('white', results[ran][4], toWrite[9], center=(25, 50))
-    write('white', results[ran][5], toWrite[10], center=(25, 50))
-    write('white', results[ran][6], toWrite[11], center=(25, 50))
-    write('white', results[ran][7], toWrite[12], center=(25, 50))
-    write('white', results[ran][8], toWrite[13], center=(25, 50))
-    write('white', results[ran][9], toWrite[14], center=(25, 50))
-    write('white', results[ran][10], toWrite[15], center=(25, 50))
-    write('white', results[ran][11], toWrite[16], center=(25, 50))
-    write('white', results[ran][12], toWrite[17], center=(25, 50))
-    write('white', results[ran][13], toWrite[18], center=(25, 50))
-    write('white', results[ran][14], toWrite[19], center=(25, 50))
-    write('white', results[ran][15], toWrite[20], center=(25, 50))
-    write('white', results[ran][16], toWrite[21], center=(25, 50))
-    write('white', results[ran][17], toWrite[22], center=(25, 50))
-    write('white', results[ran][18], toWrite[23], center=(25, 50))
+    write('white', '$'+results[ran][19], toWrite[0], center=(25, 50))
+    write('white', '$'+results[ran][20], toWrite[1], center=(25, 50))
+    write('white', '$'+results[ran][21], toWrite[2], center=(25, 50))
+    write('white', '$'+results[ran][22], toWrite[3], center=(25, 500))
+    write('white', '$'+results[ran][23], toWrite[4], center=(25, 50))
+    write('white', '$'+results[ran][0], toWrite[5], center=(25, 50))
+    write('white', '$'+results[ran][1], toWrite[6], center=(25, 50))
+    write('white', '$'+results[ran][2], toWrite[7], center=(25, 50))
+    write('white', '$'+results[ran][3], toWrite[8], center=(25, 50))
+    write('white', '$'+results[ran][4], toWrite[9], center=(25, 50))
+    write('white', '$'+results[ran][5], toWrite[10], center=(25, 50))
+    write('white', '$'+results[ran][6], toWrite[11], center=(25, 50))
+    write('white', '$'+results[ran][7], toWrite[12], center=(25, 50))
+    write('white', '$'+results[ran][8], toWrite[13], center=(25, 50))
+    write('white', '$'+results[ran][9], toWrite[14], center=(25, 50))
+    write('white', '$'+results[ran][10], toWrite[15], center=(25, 50))
+    write('white', '$'+results[ran][11], toWrite[16], center=(25, 50))
+    write('white', '$'+results[ran][12], toWrite[17], center=(25, 50))
+    write('white', '$'+results[ran][13], toWrite[18], center=(25, 50))
+    write('white', '$'+results[ran][14], toWrite[19], center=(25, 50))
+    write('white', '$'+results[ran][15], toWrite[20], center=(25, 50))
+    write('white', '$'+results[ran][16], toWrite[21], center=(25, 50))
+    write('white', '$'+results[ran][17], toWrite[22], center=(25, 50))
+    write('white', '$'+results[ran][18], toWrite[23], center=(25, 50))
 
 
 toWrite = [(230, 63), (200, 120), (170, 170), (140, 210), (90, 240), (30, 260), (-19, 260), (-80, 250), (-135, 220), (-170, 180), (-200, 130), (-215, 65), (-215, 15), (-200, -40), (-170, -90), (-130, -135), (-80, -175), (-30, -190), (35, -190), (90, -170), (140, -140), (170, -95), (210, -50), (220, 10)]
@@ -121,7 +121,7 @@ def wheelSpin(colors, radius, outer, inner, center=(0, 0)):
         circle.penup()
         circle.goto(center)
         circle.end_fill()
-        write('white', results[outer][inner], toWrite[where])
+        write('white', '$'+results[outer][inner], toWrite[where])
         where = where + 1
         inner = inner + 1
         circle.hideturtle()
@@ -132,7 +132,7 @@ def write(color, whatToWrite, toWrite, center=(0, 0)):
     circle.goto(toWrite)
     circle.pendown()
     circle.color(color)
-    if (whatToWrite == 'BANKRUPT') or (whatToWrite == 'Lose turn') or (whatToWrite == 'Free Play'):
+    if (whatToWrite == '$BANKRUPT') or (whatToWrite == '$Lose turn') or (whatToWrite == '$Free Play'):
         circle.write(whatToWrite, font=("Arial", 8, "bold"))
     else:
         circle.write(whatToWrite, font=("Arial", 12, "bold"))
@@ -140,10 +140,8 @@ def write(color, whatToWrite, toWrite, center=(0, 0)):
     circle.goto(center)
 
 
-xcoor = -600
-ycoor = 300
-player1score = 1000
-player2score = 1000
+player1score = 0
+player2score = 0
 player1status = True
 player2status = False
 
@@ -154,7 +152,6 @@ def getRandomPhraseFromFile(file):
     return line
 
 
-puzzle = []
 calledLetters = []
 phrase = getRandomPhraseFromFile('phrases.txt')
 
@@ -188,6 +185,8 @@ def updateScore(count):
         player1score = player1score + count
     else:
         player2score = player2score + count
+    print("Player1: "+str(player1score)+' , '+"Player2: "+str(player2score))
+    displayScore()
 
 
 def isLetterInPhrase(string, letter):
@@ -205,10 +204,15 @@ def nextPlayersTurn():
     else:
         player2status = False
         player1status = True
-
+    print("Next player's turn.")
+    inpt = input("Type spin the wheel: ")
+    while not inpt == "spin the wheel":
+        inpt = input("Type spin the wheel: ")
+    spinTheWheel()
 
 def consonantOrVowel():
-    return input("Consonant or Vowel: ")
+    printMessage("Type consonant or vowel in console")
+    return input("Type Consonant or Vowel: ")
 
 
 def checkScore():
@@ -237,7 +241,11 @@ def isVowel(v):
 
 def vowelChoosed():
     if checkScore() < 250:
-        print("Your amount is less than 250$: ", checkScore(), " ,So, you must have to spin.")
+        print("Your amount is less than 250$: " + '$'+str(checkScore()) + " ,So, you must have to spin.")
+        printMessage("Your amount is less than 250$: " + '$'+str(checkScore()) + " ,So, you must have to spin.")
+        inpt = input("Type spin the wheel: ")
+        while not inpt == "spin the wheel":
+            inpt = input("Type spin the wheel: ")
         spinTheWheel()
     else:
         vowel = input("Give a vowel: ")
@@ -245,19 +253,18 @@ def vowelChoosed():
             vowel = input("Please enter VOWEL: ")
         if isLetterInPhrase(phrase, vowel) > 0:
             calledLetters.append(vowel)
-            puzzle.append(generateDashes(phrase))
             print(generateDashes(phrase))
             writePuzzles()
-            global ycoor
-            ycoor = ycoor - 20
-            print(deductScore())
+            deductScore()
+            displayScore()
+            print(str(playersScore()))
             choiceBtwVowelSpinSolve()
         else:
             nextPlayersTurn()
-            afterChoosingConsonantOrVowel()
 
 
 def checkPuzzle():
+    printMessage("Write complete phrase in Capital words in console")
     res = input("Write complete phrase in Capital words: ")
     if res == phrase:
         return True
@@ -280,10 +287,14 @@ def choiceBtwVowelSpinSolve():
         vowelChoosed()
     elif choice2 == "Solve puzzle":
         if checkPuzzle():
+
             winner()
+            if player1status:
+                announceWinner('Player1')
+            else:
+                announceWinner('Player2')
         else:
             nextPlayersTurn()
-            afterChoosingConsonantOrVowel()
 
 
 def displayScore():
@@ -300,18 +311,16 @@ def afterChoosingConsonantOrVowel():
     if (choice == "vowel") or (choice == "Vowel"):
         vowelChoosed()
     elif (choice == "consonant") or (choice == "Consonant"):
-        letter = input("ok now provide a letter: ")
+        letter = input("ok now provide a letter in capital: ")
         count = isLetterInPhrase(phrase, letter)
         while isVowel(letter):
-            letter = input("Please do not enter VOWEL: ")
+            letter = input("Please do not enter VOWEL enter letter again: ")
         if count > 0:
             updateScore(count)
             print(displayScore())
+            playersScore()
             calledLetters.append(letter)
-            # puzzle.append(generateDashes(phrase))
             writePuzzles()
-            global ycoor
-            ycoor = ycoor - 20
             print(generateDashes(phrase))
             choiceBtwVowelSpinSolve()
         else:
@@ -328,24 +337,25 @@ def bankrupt():
     else:
         player2score = 0
     nextPlayersTurn()
-    spinTheWheel()
 
 
 def loseTurn():
     nextPlayersTurn()
-    spinTheWheel()
 
 
 def freePlay():
-    res = input("Call anything vowel or consonant: ")
     printMessage("Type vowel or consonant in console")
+    res = input("Call anything vowel or consonant in capital: ")
     if isLetterInPhrase(phrase, res) > 0:
         calledLetters.append(res)
         writePuzzles()
-        global ycoor
-        ycoor = ycoor - 20
         print(generateDashes(phrase))
+        inpt = input("Type spin the wheel: ")
+        while not inpt == "spin the wheel":
+            inpt = input("Type spin the wheel: ")
         spinTheWheel()
+    else:
+        nextPlayersTurn()
 
 
 def writePuzzles():
@@ -382,6 +392,8 @@ def arrow():
 
 
 def spinTheWheel():
+    global ran
+    ran = random.choice([5, 6, 7, 8, 9])
     temp = ran
     temp1 = 0
     writePuzzles()
@@ -399,6 +411,9 @@ def spinTheWheel():
     elif res == "Free Play":
         freePlay()
     else:
+        updateScore(int(res))
+        playersScore()
+        printMessage("Now type consonant or vowel in console.")
         afterChoosingConsonantOrVowel()
 
 
@@ -411,6 +426,34 @@ def displayBoard():
     writePuzzles()
     arrow()
     wheel(colors[0], 250, center=(25, 50))
+
+
+def playersScore():
+    score = turtle.Turtle()
+    score.penup()
+    score.goto(-600, 300)
+    score.pendown()
+    score.fillcolor('green')
+    score.begin_fill()
+    score.forward(300)
+    score.right(90)
+    score.forward(110)
+    score.right(90)
+    score.forward(300)
+    score.right(90)
+    score.forward(110)
+    score.end_fill()
+    score.color('white')
+    score.right(90)
+    score.penup()
+    score.goto(-575, 255)
+    score.pendown()
+    score.write('Player1 Score = $'+str(player1score), font=("Arial", 15, "bold"))
+    score.penup()
+    score.goto(-575, 220)
+    score.pendown()
+    score.write('Player2 Score = $'+str(player2score), font=("Arial", 15, "bold"))
+    score.hideturtle()
 
 
 def printMessage(m):
@@ -437,8 +480,20 @@ def printMessage(m):
     message.hideturtle()
 
 
+def announceWinner(win):
+    winner = turtle.Turtle()
+    winner.penup()
+    winner.goto(-600, 0)
+    winner.pendown()
+    winner.color('red')
+    winner.write(win+' won the Game', font=("Arial", 20, "bold"))
+    winner.hideturtle()
+
+
 displayBoard()
 printMessage("Type spin the wheel in console to spin the wheel")
+playersScore()
+print(phrase)
 xyz = input("Type spin the wheel:")
 if xyz == "spin the wheel":
     spinTheWheel()
