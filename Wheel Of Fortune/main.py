@@ -55,7 +55,7 @@ result23 = ['$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '
 result24 = ['$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250']
 results = [result1, result2, result3, result4, result5, result6, result7, result8, result9, result10, result11, result12, result13, result14, result15, result16, result17, result18, result19, result20, result21, result22, result23, result24]
 circle = Turtle()
-ran = random.choice([5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
+ran = random.choice([5, 6, 7, 8, 9])
 
 
 def wheel(colors, radius, center=(0, 0)):
@@ -98,8 +98,6 @@ def wheel(colors, radius, center=(0, 0)):
     write('white', results[ran][16], toWrite[21], center=(25, 50))
     write('white', results[ran][17], toWrite[22], center=(25, 50))
     write('white', results[ran][18], toWrite[23], center=(25, 50))
-    # circle.hideturtle()
-    # turtle.done()
 
 
 toWrite = [(230, 63), (200, 120), (170, 170), (140, 210), (90, 240), (30, 260), (-19, 260), (-80, 250), (-135, 220), (-170, 180), (-200, 130), (-215, 65), (-215, 15), (-200, -40), (-170, -90), (-130, -135), (-80, -175), (-30, -190), (35, -190), (90, -170), (140, -140), (170, -95), (210, -50), (220, 10)]
@@ -249,6 +247,9 @@ def vowelChoosed():
             calledLetters.append(vowel)
             puzzle.append(generateDashes(phrase))
             print(generateDashes(phrase))
+            writePuzzles()
+            global ycoor
+            ycoor = ycoor - 20
             print(deductScore())
             choiceBtwVowelSpinSolve()
         else:
@@ -271,12 +272,13 @@ def winner():
 
 
 def choiceBtwVowelSpinSolve():
-    choice2 = input("What you want to do now? Spin the wheel or Buy a vowel or Solve the puzzle: ")
-    if choice2 == "Spin the wheel":
+    printMessage("Spin wheel or Buy vowel or Solve puzzle type in console.")
+    choice2 = input("What you want to do now? Spin wheel or Buy vowel or Solve puzzle: ")
+    if choice2 == "Spin wheel":
         spinTheWheel()
-    elif choice2 == "Buy a vowel":
+    elif choice2 == "Buy vowel":
         vowelChoosed()
-    elif choice2 == "Solve the puzzle":
+    elif choice2 == "Solve puzzle":
         if checkPuzzle():
             winner()
         else:
@@ -306,7 +308,10 @@ def afterChoosingConsonantOrVowel():
             updateScore(count)
             print(displayScore())
             calledLetters.append(letter)
-            puzzle.append(generateDashes(phrase))
+            # puzzle.append(generateDashes(phrase))
+            writePuzzles()
+            global ycoor
+            ycoor = ycoor - 20
             print(generateDashes(phrase))
             choiceBtwVowelSpinSolve()
         else:
@@ -333,8 +338,12 @@ def loseTurn():
 
 def freePlay():
     res = input("Call anything vowel or consonant: ")
+    printMessage("Type vowel or consonant in console")
     if isLetterInPhrase(phrase, res) > 0:
         calledLetters.append(res)
+        writePuzzles()
+        global ycoor
+        ycoor = ycoor - 20
         print(generateDashes(phrase))
         spinTheWheel()
 
@@ -342,9 +351,25 @@ def freePlay():
 def writePuzzles():
     p1 = turtle.Turtle()
     p1.penup()
-    p1.goto(xcoor, ycoor)
+    p1.goto(-610, -230)
+    p1.fillcolor('black')
+    p1.begin_fill()
     p1.pendown()
+    p1.forward(600)
+    p1.right(90)
+    p1.forward(50)
+    p1.right(90)
+    p1.forward(600)
+    p1.right(90)
+    p1.forward(50)
+    p1.right(90)
+    p1.end_fill()
+    p1.penup()
+    p1.goto(-600, -275)
+    p1.pendown()
+    p1.color('white')
     p1.write(generateDashes(phrase), font=("Arial", 20, "bold"))
+    p1.hideturtle()
 
 
 def arrow():
@@ -365,15 +390,16 @@ def spinTheWheel():
         if temp1 <= 23:
             temp1 = temp1 + 1
             wheelSpin(colors[i], 250, temp1, 0, center=(25, 50))
-    # res = input("Enter output of wheel spin: ")
-    # if res == "Number":
-    #     afterChoosingConsonantOrVowel()
-    # elif res == "Bankrupt":
-    #     bankrupt()
-    # elif res == "Lose a turn":
-    #     loseTurn()
-    # elif res == "Free Play":
-    #     freePlay()
+    res = results[ran][0]
+    printMessage(res)
+    if res == "BANKRUPT":
+        bankrupt()
+    elif res == "Lose turn":
+        loseTurn()
+    elif res == "Free Play":
+        freePlay()
+    else:
+        afterChoosingConsonantOrVowel()
 
 
 def displayBoard():
@@ -383,19 +409,38 @@ def displayBoard():
     # wn.setup(width=650, height=600)
     # wn.tracer(0)
     writePuzzles()
-
-
-    # p = turtle.Turtle()
-    # p.penup()
-    # p.goto(-600, 300)
-    # p.pendown()
-    # p.write(generateDashes(phrase), font=("Arial", 20, 'bold'))
     arrow()
     wheel(colors[0], 250, center=(25, 50))
 
 
+def printMessage(m):
+    message = turtle.Turtle()
+    message.penup()
+    message.goto(200, 300)
+    message.pendown()
+    message.fillcolor('black')
+    message.begin_fill()
+    message.forward(400)
+    message.right(90)
+    message.forward(50)
+    message.right(90)
+    message.forward(400)
+    message.right(90)
+    message.forward(50)
+    message.end_fill()
+    message.penup()
+    message.goto(215, 280)
+    message.pendown()
+    message.right(90)
+    message.color('white')
+    message.write(m, font=("Arial", 10, "bold"))
+    message.hideturtle()
+
+
 displayBoard()
-# spinTheWheel()
-# print(results[ran][0])
+printMessage("Type spin the wheel in console to spin the wheel")
+xyz = input("Type spin the wheel:")
+if xyz == "spin the wheel":
+    spinTheWheel()
 circle.hideturtle()
 turtle.done()
