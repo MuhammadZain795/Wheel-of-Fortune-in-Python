@@ -1,6 +1,6 @@
-from turtle import *
-import turtle
 import random
+import turtle
+from turtle import *
 
 color1 = ['#FF8C00','#000000','#888800','#008800','#008888','#C0C0C0','#440088','#B0C4DE','#880000','#884400','#888800','#000000','#008888','#C0C0C0','#440088','#B0C4DE','#880000','#884400','#888800','#008800','#008888','#C0C0C0','#440088','#B0C4DE']
 color2 = ['#000000','#888800','#008800','#008888','#C0C0C0','#440088','#B0C4DE','#880000','#884400','#888800','#000000','#008888','#C0C0C0','#440088','#B0C4DE','#880000','#884400','#888800','#008800','#008888','#C0C0C0','#440088','#B0C4DE','#FF8C00']
@@ -55,17 +55,7 @@ result23 = ['$250', '$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '
 result24 = ['$50','$100', '$1000', '$500', '$200', 'BANKRUPT', '$400', '$1', '$5000', 'Free Play', '$100', '$400', '$200', '$1', '$500', 'Lose turn', '$100', '$1000', '$10', '$200', '$600', '$650', 'BANKRUPT', '$250']
 results = [result1, result2, result3, result4, result5, result6, result7, result8, result9, result10, result11, result12, result13, result14, result15, result16, result17, result18, result19, result20, result21, result22, result23, result24]
 circle = Turtle()
-# arrow = turtle.Turtle()
-# arrow.penup()
-# arrow.goto(-620,-300)
-# arrow.pendown()
-
-# wn = turtle.Screen()
-# wn.title("Wheel of Fortune")
-# wn.bgcolor('grey')
-# wn.setup(width=650, height=600)
-# wn.tracer(0)
-ran = random.choice([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23])
+ran = random.choice([5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
 
 
 def wheel(colors, radius, center=(0, 0)):
@@ -108,6 +98,8 @@ def wheel(colors, radius, center=(0, 0)):
     write('white', results[ran][16], toWrite[21], center=(25, 50))
     write('white', results[ran][17], toWrite[22], center=(25, 50))
     write('white', results[ran][18], toWrite[23], center=(25, 50))
+    # circle.hideturtle()
+    # turtle.done()
 
 
 toWrite = [(230, 63), (200, 120), (170, 170), (140, 210), (90, 240), (30, 260), (-19, 260), (-80, 250), (-135, 220), (-170, 180), (-200, 130), (-215, 65), (-215, 15), (-200, -40), (-170, -90), (-130, -135), (-80, -175), (-30, -190), (35, -190), (90, -170), (140, -140), (170, -95), (210, -50), (220, 10)]
@@ -134,6 +126,7 @@ def wheelSpin(colors, radius, outer, inner, center=(0, 0)):
         write('white', results[outer][inner], toWrite[where])
         where = where + 1
         inner = inner + 1
+        circle.hideturtle()
 
 
 def write(color, whatToWrite, toWrite, center=(0, 0)):
@@ -149,45 +142,12 @@ def write(color, whatToWrite, toWrite, center=(0, 0)):
     circle.goto(center)
 
 
-wheel(colors[0], 250, center=(25, 50))
-
-temp = ran
-for i in range(len(colors)):
-    print(ran)
-    if temp >= 23:
-        temp = -1
-    temp = temp + 1
-    wheelSpin(colors[i], 250, temp, 0, center=(25, 50))
-
-circle.hideturtle()
-print('done - press any key to exit')
-turtle.onkeypress(exit)
-turtle.listen()
-turtle.done()
-
-
-
-# import random
-# import turtle
+xcoor = -600
+ycoor = 300
 player1score = 1000
 player2score = 1000
 player1status = True
 player2status = False
-
-
-def generateWheel():
-    wheel = turtle.Turtle()
-    wheel.speed(999999 * 999999)
-    wheel.penup()
-    wheel.goto(-15, -150)
-    wheel.pendown()
-    wheel.circle(200)
-    wheel.left(90)
-    wheel.forward(150)
-    wheel.penup()
-    wheel.goto(0, -150)
-    wheel.pendown()
-    turtle.done()
 
 
 def getRandomPhraseFromFile(file):
@@ -196,6 +156,7 @@ def getRandomPhraseFromFile(file):
     return line
 
 
+puzzle = []
 calledLetters = []
 phrase = getRandomPhraseFromFile('phrases.txt')
 
@@ -286,6 +247,7 @@ def vowelChoosed():
             vowel = input("Please enter VOWEL: ")
         if isLetterInPhrase(phrase, vowel) > 0:
             calledLetters.append(vowel)
+            puzzle.append(generateDashes(phrase))
             print(generateDashes(phrase))
             print(deductScore())
             choiceBtwVowelSpinSolve()
@@ -344,6 +306,7 @@ def afterChoosingConsonantOrVowel():
             updateScore(count)
             print(displayScore())
             calledLetters.append(letter)
+            puzzle.append(generateDashes(phrase))
             print(generateDashes(phrase))
             choiceBtwVowelSpinSolve()
         else:
@@ -376,19 +339,63 @@ def freePlay():
         spinTheWheel()
 
 
+def writePuzzles():
+    p1 = turtle.Turtle()
+    p1.penup()
+    p1.goto(xcoor, ycoor)
+    p1.pendown()
+    p1.write(generateDashes(phrase), font=("Arial", 20, "bold"))
+
+
+def arrow():
+    arrow = turtle.Turtle()
+    arrow.penup()
+    arrow.goto(360, 85)
+    arrow.left(180)
+    arrow.pendown()
+    arrow.forward(30)
+
+
 def spinTheWheel():
-    res = input("Enter output of wheel spin: ")
-    if res == "Number":
-        afterChoosingConsonantOrVowel()
-    elif res == "Bankrupt":
-        bankrupt()
-    elif res == "Lose a turn":
-        loseTurn()
-    elif res == "Free Play":
-        freePlay()
+    temp = ran
+    temp1 = 0
+    writePuzzles()
+    arrow()
+    for i in range(0, temp):
+        if temp1 <= 23:
+            temp1 = temp1 + 1
+            wheelSpin(colors[i], 250, temp1, 0, center=(25, 50))
+    # res = input("Enter output of wheel spin: ")
+    # if res == "Number":
+    #     afterChoosingConsonantOrVowel()
+    # elif res == "Bankrupt":
+    #     bankrupt()
+    # elif res == "Lose a turn":
+    #     loseTurn()
+    # elif res == "Free Play":
+    #     freePlay()
 
 
-# print(phrase)
-# print(generateDashes(phrase))
+def displayBoard():
+    # wn = turtle.Screen()
+    # wn.title("Wheel of Fortune")
+    # wn.bgcolor('grey')
+    # wn.setup(width=650, height=600)
+    # wn.tracer(0)
+    writePuzzles()
+
+
+    # p = turtle.Turtle()
+    # p.penup()
+    # p.goto(-600, 300)
+    # p.pendown()
+    # p.write(generateDashes(phrase), font=("Arial", 20, 'bold'))
+    arrow()
+    wheel(colors[0], 250, center=(25, 50))
+
+
+displayBoard()
 # spinTheWheel()
-generateWheel()
+# print(results[ran][0])
+circle.hideturtle()
+turtle.done()

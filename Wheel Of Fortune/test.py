@@ -2,6 +2,9 @@ from turtle import *
 import turtle
 
 
-t = Turtle()
-t.left(90)
+def a(x, y):
+    print(x, y)
+
+
+turtle.onscreenclick(a)
 turtle.done()
