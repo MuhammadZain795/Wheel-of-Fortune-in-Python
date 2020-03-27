@@ -88,11 +88,9 @@ def wheel(colors, radius, center=(0, 0)):
 toWrite = [(230, 63), (200, 120), (170, 170), (140, 210), (90, 240), (30, 260), (-19, 260), (-80, 250), (-135, 220), (-170, 180), (-200, 130), (-215, 65), (-215, 15), (-200, -40), (-170, -90), (-130, -135), (-80, -175), (-30, -190), (35, -190), (90, -170), (140, -140), (170, -95), (210, -50), (220, 10)]
 
 
-def wheelSpin(colors, radius, center=(0, 0)):
+def wheelSpin(colors, radius, outer, inner, center=(0, 0)):
     slice_angle = 360 / len(colors)
     heading, position = 90, (center[0] + radius, center[1])
-    inner = 0
-    outer = 0
     where = 0
     for color in colors:
         circle.color(color, color)
@@ -110,7 +108,6 @@ def wheelSpin(colors, radius, center=(0, 0)):
         write('white', results[outer][inner], toWrite[where])
         where = where + 1
         inner = inner + 1
-    outer = outer + 1
 
 
 def write(color, whatToWrite, toWrite, center=(0, 0)):
@@ -130,7 +127,6 @@ def write(color, whatToWrite, toWrite, center=(0, 0)):
 
 
 wheel(colors[0], 250, center=(25, 50))
-# write('white', results[0][18], center=(25, 50), toWrite=(220, 10))
 write('white', results[0][19],  toWrite[0], center=(25, 50))
 write('white', results[0][20],  toWrite[1],  center=(25, 50))
 write('white', results[0][21],  toWrite[2],  center=(25, 50))
@@ -156,7 +152,7 @@ write('white', results[0][16],  toWrite[21],  center=(25, 50))
 write('white', results[0][17],  toWrite[22],  center=(25, 50))
 write('white', results[0][18],  toWrite[23],  center=(25, 50))
 for i in range(len(colors)):
-    wheelSpin(colors[i], 250, center=(25, 50))
+    wheelSpin(colors[i], 250, i, 0, center=(25, 50))
 # write('white', results[0][18], center=(25, 50), toWrite=(220, 10))
 # write('white', results[0][19], center=(25, 50), toWrite=(230, 63))
 # write('white', results[0][20], center=(25, 50), toWrite=(200, 120))
