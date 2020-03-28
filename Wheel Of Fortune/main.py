@@ -214,7 +214,7 @@ def nextPlayersTurn():
 def consonantOrVowel():
     printMessage("Type consonant or vowel in console")
     inpt = input("Type consonant or vowel: ")
-    while not (inpt == "consonant") or (inpt == "Consonant") or (inpt == "vowel") or (inpt == "Vowel"):
+    if not ((inpt == "consonant") and (inpt == "Consonant") and (inpt == "Vowel") and (inpt == "vowel")):
         inpt = input("Type consonant or vowel: ")
     return inpt
 
@@ -285,15 +285,12 @@ def winner():
 def choiceBtwVowelSpinSolve():
     printMessage("Spin wheel or Buy vowel or Solve puzzle type in console.")
     choice2 = input("What you want to do now? Spin wheel or Buy vowel or Solve puzzle: ")
-    while not (choice2 == "Spin wheel") or (choice2 == "Buy vowel") or (choice2 == "Solve puzzle"):
-        choice2 = input("What you want to do now? Spin wheel or Buy vowel or Solve puzzle: ")
     if choice2 == "Spin wheel":
         spinTheWheel()
     elif choice2 == "Buy vowel":
         vowelChoosed()
     elif choice2 == "Solve puzzle":
         if checkPuzzle():
-
             winner()
             if player1status:
                 announceWinner('Player1')
