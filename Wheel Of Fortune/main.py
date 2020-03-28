@@ -128,6 +128,7 @@ def wheelSpin(colors, radius, outer, inner, center=(0, 0)):
 
 
 def write(color, whatToWrite, toWrite, center=(0, 0)):
+    circle.speed('fastest')
     circle.penup()
     circle.goto(toWrite)
     circle.pendown()
@@ -144,6 +145,7 @@ player1score = 0
 player2score = 0
 player1status = True
 player2status = False
+calledLetters = []
 
 
 def getRandomPhraseFromFile(file):
@@ -152,7 +154,6 @@ def getRandomPhraseFromFile(file):
     return line
 
 
-calledLetters = []
 phrase = getRandomPhraseFromFile('phrases.txt')
 
 
@@ -212,7 +213,10 @@ def nextPlayersTurn():
 
 def consonantOrVowel():
     printMessage("Type consonant or vowel in console")
-    return input("Type Consonant or Vowel: ")
+    inpt = input("Type consonant or vowel: ")
+    while not (inpt == "consonant") or (inpt == "Consonant") or (inpt == "vowel") or (inpt == "Vowel"):
+        inpt = input("Type consonant or vowel: ")
+    return inpt
 
 
 def checkScore():
@@ -281,6 +285,8 @@ def winner():
 def choiceBtwVowelSpinSolve():
     printMessage("Spin wheel or Buy vowel or Solve puzzle type in console.")
     choice2 = input("What you want to do now? Spin wheel or Buy vowel or Solve puzzle: ")
+    while not (choice2 == "Spin wheel") or (choice2 == "Buy vowel") or (choice2 == "Solve puzzle"):
+        choice2 = input("What you want to do now? Spin wheel or Buy vowel or Solve puzzle: ")
     if choice2 == "Spin wheel":
         spinTheWheel()
     elif choice2 == "Buy vowel":
@@ -481,6 +487,28 @@ def printMessage(m):
 
 
 def announceWinner(win):
+    p1 = turtle.Turtle()
+    p1.penup()
+    p1.goto(-610, -230)
+    p1.fillcolor('black')
+    p1.begin_fill()
+    p1.pendown()
+    p1.forward(600)
+    p1.right(90)
+    p1.forward(50)
+    p1.right(90)
+    p1.forward(600)
+    p1.right(90)
+    p1.forward(50)
+    p1.right(90)
+    p1.end_fill()
+    p1.penup()
+    p1.goto(-600, -275)
+    p1.pendown()
+    p1.color('white')
+    p1.write(phrase, font=("Arial", 20, "bold"))
+    p1.hideturtle()
+
     winner = turtle.Turtle()
     winner.penup()
     winner.goto(-600, 0)
@@ -493,9 +521,9 @@ def announceWinner(win):
 displayBoard()
 printMessage("Type spin the wheel in console to spin the wheel")
 playersScore()
-print(phrase)
 xyz = input("Type spin the wheel:")
-if xyz == "spin the wheel":
-    spinTheWheel()
+while not (xyz == "spin the wheel"):
+    xyz = input("Type spin the wheel:")
+spinTheWheel()
 circle.hideturtle()
 turtle.done()
