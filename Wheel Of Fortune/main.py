@@ -214,8 +214,6 @@ def nextPlayersTurn():
 def consonantOrVowel():
     printMessage("Type consonant or vowel in console")
     inpt = input("Type consonant or vowel: ")
-    if not ((inpt == "consonant") and (inpt == "Consonant") and (inpt == "Vowel") and (inpt == "vowel")):
-        inpt = input("Type consonant or vowel: ")
     return inpt
 
 
