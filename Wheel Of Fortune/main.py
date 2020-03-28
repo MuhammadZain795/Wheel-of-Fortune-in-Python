@@ -516,7 +516,6 @@ def announceWinner(win):
 displayBoard()
 printMessage("Type spin the wheel in console to spin the wheel")
 playersScore()
-print(phrase)
 xyz = input("Type spin the wheel:")
 while not (xyz == "spin the wheel"):
     xyz = input("Type spin the wheel:")
