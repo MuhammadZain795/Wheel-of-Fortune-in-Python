@@ -59,6 +59,20 @@ ran = random.choice([5, 6, 7, 8, 9])
 
 
 def wheel(colors, radius, center=(0, 0)):
+    circle.penup()
+    circle.goto(360, 85)
+    circle.left(180)
+    circle.fillcolor('black')
+    circle.begin_fill()
+    circle.pendown()
+    circle.forward(40)
+    circle.left(90)
+    circle.forward(5)
+    circle.left(90)
+    circle.forward(40)
+    circle.left(90)
+    circle.forward(5)
+    circle.end_fill()
     slice_angle = 360 / len(colors)
     heading, position = 90, (center[0] + radius, center[1])
     for color in colors:
@@ -206,11 +220,7 @@ def nextPlayersTurn():
         player2status = False
         player1status = True
     printMessage("Next player's turn.")
-    printMessage("Type \"spin the wheel\" in console.")
     print("Next player's turn.")
-    inpt = input("Type \"spin the wheel\": ")
-    while not inpt == "spin the wheel":
-        inpt = input("Type \"spin the wheel\": ")
     spinTheWheel(1, 2)
 
 
@@ -247,10 +257,6 @@ def isVowel(v):
 def vowelChoosed():
     if checkScore() < 250:
         print("Your amount is less than 250$: " + '$' + str(checkScore()) + " ,So, you must have to spin.")
-        printMessage("Your amount is less than 250$: " + '$'+str(checkScore()) + " ,So, Type \"spin the wheel\" in console.")
-        inpt = input("Type \"spin the wheel\": ")
-        while not inpt == "spin the wheel":
-            inpt = input("Type \"spin the wheel\": ")
         spinTheWheel(1, 2)
     else:
         printMessage("Give a vowel in console.")
@@ -361,11 +367,7 @@ def freePlay():
         calledLetters.append(res)
         writePuzzles()
         print(generateDashes(phrase))
-        printMessage("Type \"spin the wheel\" in console.")
-        inpt = input("Type \"spin the wheel\": ")
-        while not inpt == "spin the wheel":
-            inpt = input("Type \"spin the wheel\": ")
-        spinTheWheel(1,2 )
+        spinTheWheel(1, 2)
     else:
         nextPlayersTurn()
 
@@ -373,34 +375,34 @@ def freePlay():
 def writePuzzles():
     p1 = turtle.Turtle()
     p1.penup()
-    p1.goto(-610, -230)
+    p1.goto(-610, -270)
     p1.fillcolor('black')
     p1.begin_fill()
     p1.pendown()
-    p1.forward(600)
+    p1.forward(900)
     p1.right(90)
     p1.forward(50)
     p1.right(90)
-    p1.forward(600)
+    p1.forward(900)
     p1.right(90)
     p1.forward(50)
     p1.right(90)
     p1.end_fill()
     p1.penup()
-    p1.goto(-600, -275)
+    p1.goto(-600, -305)
     p1.pendown()
     p1.color('white')
     p1.write(generateDashes(phrase), font=("Arial", 20, "bold"))
     p1.hideturtle()
 
 
-def arrow():
-    arrow = turtle.Turtle()
-    arrow.penup()
-    arrow.goto(360, 85)
-    arrow.left(180)
-    arrow.pendown()
-    arrow.forward(30)
+# def arrow():
+#     arrow = turtle.Turtle()
+#     arrow.penup()
+#     arrow.goto(360, 85)
+#     arrow.left(180)
+#     arrow.pendown()
+#     arrow.forward(30)
 
 
 def spinTheWheel(x, y):
@@ -409,7 +411,17 @@ def spinTheWheel(x, y):
     temp = ran
     temp1 = 0
     writePuzzles()
-    arrow()
+    arrow = turtle.Turtle()
+    arrow.penup()
+    arrow.goto(360, 85)
+    arrow.left(180)
+    arrow.pendown()
+    arrow.forward(30)
+    printMessage("Type \"spin the wheel\" in console to spin the wheel.")
+    inpt = input("Type \"spin the wheel\" to spin the wheel: ")
+    while not inpt == "spin the wheel":
+        inpt = input("Type \"spin the wheel\" to spin the wheel: ")
+
     for i in range(0, temp):
         if temp1 <= 23:
             temp1 = temp1 + 1
@@ -429,23 +441,27 @@ def spinTheWheel(x, y):
         afterChoosingConsonantOrVowel()
 
 
-def displayBoard():
-    print(phrase)
+def forBoard():
     wn = turtle.Screen()
     wn.title("Wheel of Fortune")
     wn.bgcolor('grey')
     wn.setup(width=650, height=600)
     wn.tracer(0)
-    wn.onscreenclick(spinTheWheel)
+
+
+def displayBoard():
+    forBoard()
     writePuzzles()
-    arrow()
+    # arrow()
+    # arrow = turtle.Turtle()
+    # arrow.penup()
+    # arrow.goto(360, 85)
+    # arrow.left(180)
+    # arrow.pendown()
+    # arrow.forward(30)
     wheel(colors[0], 250, center=(25, 50))
-    printMessage("Type \"Click on screen\" to spin the wheel")
     playersScore()
-    # xyz = input("Type \"spin the wheel\":")
-    # while not (xyz == "spin the wheel"):
-    #     xyz = input("Type \"spin the wheel\":")
-    # spinTheWheel()
+    spinTheWheel(1, 2)
 
 
 def playersScore():
@@ -483,20 +499,20 @@ def playersScore():
 def printMessage(m):
     message = turtle.Turtle()
     message.penup()
-    message.goto(70, -230)
+    message.goto(-300, -220)
     message.pendown()
     message.fillcolor('black')
     message.begin_fill()
-    message.forward(550)
+    message.forward(650)
     message.right(90)
-    message.forward(50)
+    message.forward(40)
     message.right(90)
-    message.forward(550)
+    message.forward(650)
     message.right(90)
-    message.forward(50)
+    message.forward(40)
     message.end_fill()
     message.penup()
-    message.goto(75, -263)
+    message.goto(-290, -250)
     message.pendown()
     message.right(90)
     message.color('white')
@@ -507,7 +523,7 @@ def printMessage(m):
 def announceWinner(win):
     p1 = turtle.Turtle()
     p1.penup()
-    p1.goto(-610, -230)
+    p1.goto(-610, -270)
     p1.fillcolor('black')
     p1.begin_fill()
     p1.pendown()
@@ -521,7 +537,7 @@ def announceWinner(win):
     p1.right(90)
     p1.end_fill()
     p1.penup()
-    p1.goto(-600, -275)
+    p1.goto(-600, -305)
     p1.pendown()
     p1.color('white')
     p1.write(phrase, font=("Arial", 20, "bold"))
