@@ -211,7 +211,8 @@ def nextPlayersTurn():
     inpt = input("Type \"spin the wheel\": ")
     while not inpt == "spin the wheel":
         inpt = input("Type \"spin the wheel\": ")
-    spinTheWheel()
+    spinTheWheel(1, 2)
+
 
 def consonantOrVowel():
     printMessage("Type \"consonant\" or \"vowel\" in console")
@@ -245,13 +246,12 @@ def isVowel(v):
 
 def vowelChoosed():
     if checkScore() < 250:
-        print("Your amount is less than 250$: " + '$'+str(checkScore()) + " ,So, you must have to spin.")
-        printMessage("Your amount is less than 250$: " + '$'+str(checkScore()) + " ,So, you must have to spin.")
-        printMessage("Type \"spin the wheel\" in console.")
+        print("Your amount is less than 250$: " + '$' + str(checkScore()) + " ,So, you must have to spin.")
+        printMessage("Your amount is less than 250$: " + '$'+str(checkScore()) + " ,So, Type \"spin the wheel\" in console.")
         inpt = input("Type \"spin the wheel\": ")
         while not inpt == "spin the wheel":
             inpt = input("Type \"spin the wheel\": ")
-        spinTheWheel()
+        spinTheWheel(1, 2)
     else:
         printMessage("Give a vowel in console.")
         vowel = input("Give a vowel: ")
@@ -279,16 +279,18 @@ def checkPuzzle():
 
 def winner():
     if player1status:
-        print("Player 1 is winner of this Game with winning price: ", player1score)
+        printMessage("Player 1 is winner of this Game with winning price: " + str(player1score))
+        print("Player 1 is winner of this Game with winning price: " + str(player1score))
     else:
-        print("Player 2 is winner of this Game with winning price: ", player2score)
+        printMessage("Player 2 is winner of this Game with winning price: " + str(player2score))
+        print("Player 2 is winner of this Game with winning price: " + str(player2score))
 
 
 def choiceBtwVowelSpinSolve():
     printMessage("\"Spin wheel\" or \"Buy vowel\" or \"Solve puzzle\" type in console.")
     choice2 = input("What you want to do now? \"Spin wheel\" or \"Buy vowel\" or \"Solve puzzle\": ")
     if choice2 == "Spin wheel":
-        spinTheWheel()
+        spinTheWheel(1, 2)
     elif choice2 == "Buy vowel":
         vowelChoosed()
     elif choice2 == "Solve puzzle":
@@ -338,8 +340,12 @@ def bankrupt():
     global player2score
     global player2status
     if player1status:
+        printMessage("Bankrupt, Player1 score = 0")
+        print("Bankrupt, Player1 score = 0")
         player1score = 0
     else:
+        printMessage("Bankrupt, Player2 score = 0")
+        print("Bankrupt, Player2 score = 0")
         player2score = 0
     nextPlayersTurn()
 
@@ -359,7 +365,7 @@ def freePlay():
         inpt = input("Type \"spin the wheel\": ")
         while not inpt == "spin the wheel":
             inpt = input("Type \"spin the wheel\": ")
-        spinTheWheel()
+        spinTheWheel(1,2 )
     else:
         nextPlayersTurn()
 
@@ -397,7 +403,7 @@ def arrow():
     arrow.forward(30)
 
 
-def spinTheWheel():
+def spinTheWheel(x, y):
     global ran
     ran = random.choice([5, 6, 7, 8, 9])
     temp = ran
@@ -424,21 +430,22 @@ def spinTheWheel():
 
 
 def displayBoard():
-    # wn = turtle.Screen()
-    # wn.title("Wheel of Fortune")
-    # wn.bgcolor('grey')
-    # wn.setup(width=650, height=600)
-    # wn.tracer(0)
-    # wn.onscreenclick(spinTheWheel, 1)
+    print(phrase)
+    wn = turtle.Screen()
+    wn.title("Wheel of Fortune")
+    wn.bgcolor('grey')
+    wn.setup(width=650, height=600)
+    wn.tracer(0)
+    wn.onscreenclick(spinTheWheel)
     writePuzzles()
     arrow()
     wheel(colors[0], 250, center=(25, 50))
-    printMessage("Type \"spin the wheel\" in console to spin the wheel")
+    printMessage("Type \"Click on screen\" to spin the wheel")
     playersScore()
-    xyz = input("Type \"spin the wheel\":")
-    while not (xyz == "spin the wheel"):
-        xyz = input("Type \"spin the wheel\":")
-    spinTheWheel()
+    # xyz = input("Type \"spin the wheel\":")
+    # while not (xyz == "spin the wheel"):
+    #     xyz = input("Type \"spin the wheel\":")
+    # spinTheWheel()
 
 
 def playersScore():
