@@ -441,16 +441,16 @@ def spinTheWheel(x, y):
         afterChoosingConsonantOrVowel()
 
 
-def forBoard():
-    wn = turtle.Screen()
-    wn.title("Wheel of Fortune")
-    wn.bgcolor('grey')
-    wn.setup(width=650, height=600)
-    wn.tracer(0)
+# def forBoard():
+#     wn = turtle.Screen()
+#     wn.title("Wheel of Fortune")
+#     wn.bgcolor('grey')
+#     wn.setup(width=650, height=600)
+#     wn.tracer(0)
 
 
 def displayBoard():
-    forBoard()
+    # forBoard()
     writePuzzles()
     # arrow()
     # arrow = turtle.Turtle()
@@ -552,6 +552,7 @@ def announceWinner(win):
     winner.hideturtle()
 
 
+print(phrase)
 displayBoard()
 
 circle.hideturtle()
