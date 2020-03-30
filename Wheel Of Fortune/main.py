@@ -154,11 +154,15 @@ def write(color, whatToWrite, toWrite, center=(0, 0)):
     circle.penup()
     circle.goto(center)
 
-
+player1Name = ""
+player2Name = ""
+player3Name = ""
 player1score = 0
 player2score = 0
+player3score = 0
 player1status = True
 player2status = False
+player3status = False
 calledLetters = []
 
 
@@ -196,11 +200,17 @@ def generateDashes(line):
 def updateScore(count):
     global player1score
     global player2score
+    global player3score
+    global player1Name
+    global player2Name
+    global player3Name
     if player1status:
         player1score = player1score + count
-    else:
+    elif player2status:
         player2score = player2score + count
-    print("Player1: "+str(player1score)+' , '+"Player2: "+str(player2score))
+    else:
+        player3score = player3score + count
+    print(player1Name + " = " + str(player1score)+' , '+player2Name + " = " + str(player2score)+' , ' + player3Name + " = " + str(player3score))
     displayScore()
 
 
@@ -213,14 +223,28 @@ def isLetterInPhrase(string, letter):
 def nextPlayersTurn():
     global player1status
     global player2status
+    global player3status
+    global player1Name
+    global player2Name
+    global player3Name
     if player1status:
         player1status = False
         player2status = True
-    else:
+        player3status = False
+        printMessage(player2Name+" now it's your turn.")
+        print(player2Name+" now it's your turn.")
+    elif player2status:
         player2status = False
+        player1status = False
+        player3status = True
+        printMessage(player3Name + " now it's your turn.")
+        print(player3Name + " now it's your turn.")
+    else:
         player1status = True
-    printMessage("Next player's turn.")
-    print("Next player's turn.")
+        player3status = False
+        player2status = False
+        printMessage(player1Name + " now it's your turn.")
+        print(player1Name + " now it's your turn.")
     spinTheWheel(1, 2)
 
 
@@ -233,6 +257,8 @@ def consonantOrVowel():
 def checkScore():
     if player1status:
         return player1score
+    elif player3status:
+        return player3score
     else:
         return player2score
 
@@ -242,6 +268,10 @@ def deductScore():
         global player1score
         player1score = player1score - 250
         return player1score
+    elif player3status:
+        global player3score
+        player3score = player3score - 250
+        return player3score
     else:
         global player2score
         player2score = player2score - 250
@@ -285,11 +315,14 @@ def checkPuzzle():
 
 def winner():
     if player1status:
-        printMessage("Player 1 is winner of this Game with winning price: " + str(player1score))
-        print("Player 1 is winner of this Game with winning price: " + str(player1score))
+        printMessage(player1Name + " is winner of this Game with winning price: " + str(player1score))
+        print(player1Name + " is winner of this Game with winning price: " + str(player1score))
+    elif player3status:
+        printMessage(player3Name + " is winner of this Game with winning price: " + str(player3score))
+        print(player3Name + " is winner of this Game with winning price: " + str(player3score))
     else:
-        printMessage("Player 2 is winner of this Game with winning price: " + str(player2score))
-        print("Player 2 is winner of this Game with winning price: " + str(player2score))
+        printMessage(player2Name + " is winner of this Game with winning price: " + str(player2score))
+        print(player2Name + " is winner of this Game with winning price: " + str(player2score))
 
 
 def choiceBtwVowelSpinSolve():
@@ -303,9 +336,11 @@ def choiceBtwVowelSpinSolve():
         if checkPuzzle():
             winner()
             if player1status:
-                announceWinner('Player1')
+                announceWinner(player1Name)
+            elif player3status:
+                announceWinner(player3Name)
             else:
-                announceWinner('Player2')
+                announceWinner(player2Name)
         else:
             nextPlayersTurn()
 
@@ -316,6 +351,8 @@ def displayScore():
     global player2score
     if player1status:
         return player1score
+    elif player3status:
+        return player3score
     return player2score
 
 
@@ -344,14 +381,20 @@ def bankrupt():
     global player1score
     global player1status
     global player2score
+    global player3score
+    global player3status
     global player2status
     if player1status:
-        printMessage("Bankrupt, Player1 score = 0")
-        print("Bankrupt, Player1 score = 0")
+        printMessage("BANKRUPT" + player1Name+"'s score is now 0")
+        print("BANKRUPT" + player1Name+"'s score is now 0")
         player1score = 0
+    elif player3status:
+        printMessage("BANKRUPT" + player3Name + "'s score is now 0")
+        print("BANKRUPT" + player3Name + "'s score is now 0")
+        player3score = 0
     else:
-        printMessage("Bankrupt, Player2 score = 0")
-        print("Bankrupt, Player2 score = 0")
+        printMessage("BANKRUPT" + player2Name + "'s score is now 0")
+        print("BANKRUPT" + player2Name + "'s score is now 0")
         player2score = 0
     nextPlayersTurn()
 
@@ -396,15 +439,6 @@ def writePuzzles():
     p1.hideturtle()
 
 
-# def arrow():
-#     arrow = turtle.Turtle()
-#     arrow.penup()
-#     arrow.goto(360, 85)
-#     arrow.left(180)
-#     arrow.pendown()
-#     arrow.forward(30)
-
-
 def spinTheWheel(x, y):
     global ran
     ran = random.choice([5, 6, 7, 8, 9])
@@ -441,30 +475,33 @@ def spinTheWheel(x, y):
         afterChoosingConsonantOrVowel()
 
 
-def forBoard():
-    wn = turtle.Screen()
-    wn.title("Wheel of Fortune")
-    wn.bgcolor('grey')
-    wn.setup(width=650, height=600)
-    wn.tracer(0)
-
-
+# def forBoard():
+#     wn = turtle.Screen()
+#     wn.title("Wheel of Fortune")
+#     wn.bgcolor('grey')
+#     wn.setup(width=650, height=600)
+#     wn.tracer(0)
 def displayBoard():
-    forBoard()
+    # forBoard()
     writePuzzles()
-    # arrow()
-    # arrow = turtle.Turtle()
-    # arrow.penup()
-    # arrow.goto(360, 85)
-    # arrow.left(180)
-    # arrow.pendown()
-    # arrow.forward(30)
     wheel(colors[0], 250, center=(25, 50))
     playersScore()
     spinTheWheel(1, 2)
 
 
+def getPlayersName():
+    global player1Name
+    global player2Name
+    global player3Name
+    player1Name = input("Please Give Player1's name: ")
+    player2Name = input("Please Give Player2's name: ")
+    player3Name = input("Please Give Player3's name: ")
+
+
 def playersScore():
+    global player1Name
+    global player2Name
+    global player3Name
     score = turtle.Turtle()
     score.penup()
     score.goto(-600, 300)
@@ -482,18 +519,24 @@ def playersScore():
     score.color('white')
     score.right(90)
     score.penup()
-    score.goto(-575, 255)
+    score.goto(-575, 265)
     score.pendown()
-    score.write('Player1 Score = $'+str(player1score), font=("Arial", 15, "bold"))
+    score.write(player1Name + ' Score = $'+str(player1score), font=("Arial", 15, "bold"))
     score.penup()
-    score.goto(-575, 220)
+    score.goto(-575, 230)
     score.pendown()
-    score.write('Player2 Score = $'+str(player2score), font=("Arial", 15, "bold"))
+    score.write(player2Name + ' Score = $'+str(player2score), font=("Arial", 15, "bold"))
+    score.penup()
+    score.goto(-575, 195)
+    score.pendown()
+    score.write(player3Name + ' Score = $' + str(player3score), font=("Arial", 15, "bold"))
     score.penup()
     if player1status:
-        score.goto(-580, 269)
+        score.goto(-580, 279)
+    elif player2status:
+        score.goto(-580, 244)
     else:
-        score.goto(-580, 234)
+        score.goto(-580, 209)
 
 
 def printMessage(m):
@@ -552,7 +595,7 @@ def announceWinner(win):
     winner.hideturtle()
 
 
-
+getPlayersName()
 displayBoard()
 
 circle.hideturtle()
